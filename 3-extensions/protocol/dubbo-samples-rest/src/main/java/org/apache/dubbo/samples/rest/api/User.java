@@ -48,6 +48,10 @@ public class User implements Serializable {
         this.name = name;
     }
 
+    public static User getInstance() {
+        return new User(1l, "dubbo-rest");
+    }
+
     public Long getId() {
         return id;
     }

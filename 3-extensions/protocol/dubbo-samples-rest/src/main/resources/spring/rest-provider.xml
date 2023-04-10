@@ -34,12 +34,13 @@
     <!--<dubbo:protocol name="rest" port="8888" keepalive="true" server="netty" iothreads="5" threads="100" contextpath="services"/>-->
 
     <!-- use tomcat server -->
-    <dubbo:protocol name="rest" port="8888" threads="500" contextpath="services" server="tomcat" accepts="500"
+    <dubbo:protocol name="rest" port="8888" threads="500" contextpath="services"
                     extension="org.apache.dubbo.samples.rest.api.extension.TraceInterceptor,
                     org.apache.dubbo.samples.rest.api.extension.TraceFilter,
                     org.apache.dubbo.samples.rest.api.extension.ClientTraceFilter,
                     org.apache.dubbo.samples.rest.api.extension.DynamicTraceBinding,
                     org.apache.dubbo.samples.rest.api.extension.CustomExceptionMapper,
+                    org.apache.dubbo.samples.rest.api.extension.ExceptionMapperForTest,
                     org.apache.dubbo.rpc.protocol.rest.support.LoggingFilter"/>
 
     <dubbo:protocol name="dubbo" port="20880" threads="200"/>
@@ -55,6 +56,25 @@
                    protocol="rest" validation="true"/>
     <dubbo:service interface="org.apache.dubbo.samples.rest.api.facade.AnotherUserRestService"
                    ref="anotherUserRestService" protocol="rest,dubbo" timeout="2000" connections="100"
+                   validation="true"/>
+
+    <dubbo:service interface="org.apache.dubbo.samples.rest.api.JaxRsRestDemoService"
+                   ref="jaxRsRestDemoService" protocol="rest" timeout="2000" connections="100"
+                   validation="true"/>
+
+    <dubbo:service interface="org.apache.dubbo.samples.rest.api.SpringRestDemoService"
+                   ref="springRestDemoService" protocol="rest" timeout="2000" connections="100"
+                   validation="true"/>
+
+    <dubbo:service interface="org.apache.dubbo.samples.rest.api.HttpMethodService"
+                   ref="httpMethodService" protocol="rest" timeout="2000" connections="100"
+                   validation="true"/>
+
+    <dubbo:service interface="org.apache.dubbo.samples.rest.api.HttpRequestAndResponseRPCContextService"
+                   ref="httpRequestAndResponseRPCContextService" protocol="rest" timeout="2000" connections="100"
+                   validation="true"/>
+    <dubbo:service interface="org.apache.dubbo.samples.rest.api.ExceptionMapperService"
+                   ref="exceptionMapperService" protocol="rest" timeout="2000" connections="100"
                    validation="true"/>
 
 
