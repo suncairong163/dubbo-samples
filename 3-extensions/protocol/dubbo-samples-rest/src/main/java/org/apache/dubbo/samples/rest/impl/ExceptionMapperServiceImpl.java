@@ -20,7 +20,7 @@ package org.apache.dubbo.samples.rest.impl;
 
 
 import org.apache.dubbo.samples.rest.api.ExceptionMapperService;
-import org.apache.dubbo.samples.rest.exception.ExceptionMapperDemoException;
+import org.apache.dubbo.samples.rest.api.exception.ExceptionMapperDemoException;
 import org.springframework.stereotype.Service;
 
 @Service("exceptionMapperService")

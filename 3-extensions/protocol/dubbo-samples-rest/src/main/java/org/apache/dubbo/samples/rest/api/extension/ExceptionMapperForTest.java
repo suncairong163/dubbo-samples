@@ -19,7 +19,7 @@
 package org.apache.dubbo.samples.rest.api.extension;
 
 import org.apache.dubbo.rpc.protocol.rest.exception.mapper.ExceptionHandler;
-import org.apache.dubbo.samples.rest.exception.ExceptionMapperDemoException;
+import org.apache.dubbo.samples.rest.api.exception.ExceptionMapperDemoException;
 
 
 public class ExceptionMapperForTest implements ExceptionHandler<ExceptionMapperDemoException> {
